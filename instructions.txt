@@ -20,3 +20,36 @@ How to add book to list
 9. In the function add the clearFields prototype to the ui constructor. The clearFields prototype is created in the next step.
 
 10. Create clearFields prototype to clear the title, author, and ISBN fields. It's important to add this near the end of the function because it will run anytime the submit button is clicked since the function has an eventhandler for 'click' on it. 
+
+------VALIDATION-------
+1. In the event listener under the UI instantiation, create if statement to validate. 
+
+2. Inside if statement, add the validation prototype to the UI variable. The actual creation of the prototype is in the next step. The validation prototype takes two parameters: 1) the message you want displayed and 2) the class that was created in index.html
+
+3. Create validation prototype. Again it will take in two parameters, 'message' and 'className'. These two parameters are defined when it's actually called in the function.
+
+4. Inside the validation prototype, we need to craete a variable to construct the div element for the pop up message.
+
+5. Add the classes to the div. This is exactly the same as when you define it in the HTML doc. Ex: <div class="alert error"></div>. In this case we are adding a class of alert and also passing in a class of whatever the className is thats entered into the second parameter of the function.
+
+6. Add text by appending child to the div with a createTextNode. The createTextNode will take message as the parameter. 
+
+7. Insert the alert into DOM by getting parent and the form since we want to put the alert right before the form. 
+
+8. Take container and use insertBefore. This will insert the div before the form. This and the previous steps is how the code knows where to place the alert.
+
+9. Use setTimeout to make the alert disappear after a set period of time
+
+10. In the if statement use the same prototype to show the success message when a book is added. For the parameters enter the message and use 'success'.
+
+---Give functionality to X button to delete---
+1. Create event listener for delete. Instead of using delete class, we need to use the parent node of the delete class (in this case, book-list). This is so that the entire item is deleted, not just the 'X' button. Don't forget to add preventDefault.
+
+2. Create deleteBook prototype that will delete the target class once clicked. This will be attached to the UI of course.
+
+3. In the deleteBook prototype, create an if statement that says if the selected element has the class 'delete', use DOM traversal to delete the item. 
+
+4. Call the deleteBook prototype in the event listener from step 1 that passes the e.target parameter. 
+
+5. Add ui.showAlert that passes in 'Book removed' and the success class so that it's green.
+
