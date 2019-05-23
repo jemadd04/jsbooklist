@@ -1,0 +1,22 @@
+How to add book to list
+
+1. Create instructors for the book and the UI
+
+2. Create event listeners. This is important so that when the form fields are filled out and you hit the submit button (the event), the function runs
+
+3. Inside of the function, create variables for each field. It stores the form values into the field into that respective variable. 
+3a. Include the preventDefault at the bottom so that the console log is entered and doesnt flash
+
+4. Instantiate the book object. This puts the title, author, and isbn variables into an object. Also creates the prototype.
+
+5. Add book to table with UI object. Instantiate UI object and add the prototype with dot notation. You also have to pass in the book object. This allows the Book object to be passed through the UI to the addBookToList prototype. This is necessary so that the Book object can be added to the table in the following steps. 
+
+6. In the addBookToList prototype, create a variable to grab the empty table body for the book list
+
+7. Create another variable inside the prototype that creates a table row element. At this point this empty table row element isn't attached to the table body. 
+
+8. Insert columns into the element created in step 7 by using innerHTML. Within the innerHTML we can create each data cell for title, author, and ISBN as well as the delete button. We can then appendChild onto the empty list variable (step 6) and pass in the table row variable from step 7
+
+9. In the function add the clearFields prototype to the ui constructor. The clearFields prototype is created in the next step.
+
+10. Create clearFields prototype to clear the title, author, and ISBN fields. It's important to add this near the end of the function because it will run anytime the submit button is clicked since the function has an eventhandler for 'click' on it. 
